@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="w-screen h-screen grid place-items-center">
+        <div class="infinite-slider w-1/2 h-[80px] relative">
+            <div class="absolute rounded-2xl bg-red-600 h-full w-[150px] grid place-items-center text-white left-full">1</div>
+            <div class="absolute rounded-2xl bg-red-600 h-full w-[150px] grid place-items-center text-white left-full">2</div>
+            <div class="absolute rounded-2xl bg-red-600 h-full w-[150px] grid place-items-center text-white left-full">3</div>
+            <div class="absolute rounded-2xl bg-red-600 h-full w-[150px] grid place-items-center text-white left-full">4</div>
+            <div class="absolute rounded-2xl bg-red-600 h-full w-[150px] grid place-items-center text-white left-full">5</div>
+            <div class="absolute rounded-2xl bg-red-600 h-full w-[150px] grid place-items-center text-white left-full">6</div>
+            <div class="absolute rounded-2xl bg-red-600 h-full w-[150px] grid place-items-center text-white left-full">7</div>
+            <div class="absolute rounded-2xl bg-red-600 h-full w-[150px] grid place-items-center text-white left-full">8</div>
+        </div>
+    </div>
+    <script>
+        const slideTime = 15;
+        const ItemCount = 8;
+        const slideItemGap = slideTime / ItemCount;
+        const slideItems = $(".infinite-slider").children();
+        slideItems.each( (index, item) => {
+            $(item).css("animation-delay", index * slideItemGap - slideTime + "s");
+            $(item).css("animation-duration", slideTime + "s");
+        });
+    </script>
+</body>
+</html>

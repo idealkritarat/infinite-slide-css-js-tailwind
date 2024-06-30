@@ -1,0 +1,21 @@
+.infinite-slider {
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,1) 10%,
+        rgba(0,0,0,1) 90%,
+        rgba(0,0,0,0) 100%
+    );
+}
+
+.infinite-slider > div {
+    animation: infiniteSlide infinite linear;
+    scale: 0.9;
+}
+
+@keyframes infiniteSlide {
+    to {
+        left:0%;
+        transform: translateX(-100%);
+    }
+}
