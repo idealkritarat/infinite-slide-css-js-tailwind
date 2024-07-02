@@ -10,11 +10,14 @@
 
 .infinite-slider > div {
     animation: infiniteSlide infinite linear;
-    scale: 0.9;
 }
 
 @keyframes infiniteSlide {
-    to {
+    30% {
+        left: 100%;
+        transform: translateX(0%);
+    }
+    100% {
         left:0%;
         transform: translateX(-100%);
     }
